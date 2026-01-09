@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Runflow Lite - Del Caos al Orden en 24 Horas | Smart Graphics Solutions</title>
+    <meta name="description" content="Sistema ERP simple para imprentas y talleres graficos. Cotizador con costos reales, control de produccion visual, ordenes de trabajo. Listo en 24 horas desde $50.000/mes.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Runflow Lite - Del Caos al Orden en 24 Horas">
+    <meta property="og:description" content="ERP simple para imprentas. Cotiza con costos reales, controla produccion visualmente. Desde $50.000/mes.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.smartgraphics.cl/software/runflow-lite">
+
+    <style>
+        /* Reset y Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: #555;
+        }
+
+        .btn-demo {
+            background: #2563eb;
+            color: white !important;
+            padding: 10px 25px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn-demo:hover {
+            background: #1d4ed8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 24px;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .hero .tagline {
+            font-size: 20px;
+            opacity: 0.8;
+            margin-bottom: 40px;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: #fbbf24;
+            color: #1e3a8a;
+            padding: 18px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .hero-note {
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* Problem Section */
+        .problem {
+            padding: 80px 0;
+            background: #fef2f2;
+        }
+
+        .problem h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #991b1b;
+            margin-bottom: 50px;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #ef4444;
+        }
+
+        .problem-card h3 {
+            color: #991b1b;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .problem-card p {
+            color: #666;
+        }
+
+        /* Solution Section */
+        .solution {
+            padding: 80px 0;
+            background: #f0fdf4;
+        }
+
+        .solution h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #166534;
+            margin-bottom: 20px;
+        }
+
+        .solution .intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            color: #166534;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .feature-card p {
+            color: #666;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .benefit-item {
+            padding: 20px;
+        }
+
+        .benefit-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .benefit-label {
+            font-size: 18px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .pricing h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .pricing-card.featured {
+            border: 3px solid #2563eb;
+            position: relative;
+        }
+
+        .pricing-card.featured::before {
+            content: "Recomendado";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2563eb;
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .pricing-card h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card .price {
+            font-size: 42px;
+            font-weight: bold;
+            color: #2563eb;
+            margin: 20px 0;
+        }
+
+        .pricing-card .price span {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 30px 0;
+        }
+
+        .pricing-card li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pricing-card li::before {
+            content: "OK ";
+            color: #22c55e;
+            font-weight: bold;
+        }
+
+        .pricing-btn {
+            display: block;
+            background: #2563eb;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .pricing-btn:hover {
+            background: #1d4ed8;
+        }
+
+        /* Before After Section */
+        .before-after {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .before-after h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .before, .after {
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        .before {
+            background: #fef2f2;
+            border: 2px solid #fca5a5;
+        }
+
+        .after {
+            background: #f0fdf4;
+            border: 2px solid #86efac;
+        }
+
+        .before h3 {
+            color: #991b1b;
+            margin-bottom: 20px;
+        }
+
+        .after h3 {
+            color: #166534;
+            margin-bottom: 20px;
+        }
+
+        .before ul, .after ul {
+            list-style: none;
+        }
+
+        .before li, .after li {
+            padding: 10px 0;
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 80px 0;
+            background: #1e3a8a;
+            color: white;
+            text-align: center;
+        }
+
+        .video-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .video-section p {
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #000;
+            border-radius: 15px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0f172a;
+            color: white;
+            font-size: 20px;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .faq h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 0 25px 20px;
+            color: #666;
+        }
+
+        /* CTA Final */
+        .cta-final {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-final h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .cta-final p {
+            font-size: 20px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        .cta-final .hero-cta {
+            font-size: 22px;
+            padding: 20px 50px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            color: #94a3b8;
+        }
+
+        .footer-col a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 5px 0;
+            opacity: 0.8;
+        }
+
+        .footer-col a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #334155;
+            color: #64748b;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <a href="https://www.smartgraphics.cl" class="logo">Smart Graphics</a>
+            <nav class="nav-links">
+                <a href="#beneficios">Beneficios</a>
+                <a href="#precios">Precios</a>
+                <a href="#faq">FAQ</a>
+                <a href="#demo" class="btn-demo">Solicitar Demo</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Del Caos al Orden en 24 Horas</h1>
+            <p class="subtitle">Runflow Lite: ERP simple para imprentas y talleres graficos</p>
+            <p class="tagline">Cotiza con costos reales. Controla produccion visualmente. Desde $50.000/mes.</p>
+            <a href="#demo" class="hero-cta">Solicitar Demo Gratis</a>
+            <p class="hero-note">Demo de 30 minutos sin compromiso. Implementacion en 24 horas.</p>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <h2>Aun cotizas en Excel?</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>Cotizaciones con errores</h3>
+                    <p>Calculas de memoria o en Excel y despues te das cuenta que pusiste mal el precio. Pierdes plata en cada error.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Caos en el taller</h3>
+                    <p>Post-its por todas partes, pizarras desactualizadas. Tu equipo no sabe que trabajo hacer primero.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Se te olvida cobrar</h3>
+                    <p>El cliente dejo un abono y nadie recuerda cuanto debe. La plata se pierde entre papeles.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>No sabes cuanto ganas</h3>
+                    <p>Trabajas todo el mes y al final no sabes si ganaste o perdiste. Cero visibilidad de tu negocio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution" id="beneficios">
+        <div class="container">
+            <h2>La Solucion: Runflow Lite</h2>
+            <p class="intro">Un sistema simple hecho para duenos de taller, no para ingenieros. Si usas WhatsApp, puedes usar Runflow.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">$</div>
+                    <h3>Cotizador con Costos Reales</h3>
+                    <p>Calcula automaticamente costos de material, proceso y margen. Genera cotizaciones profesionales en PDF. No mas errores de calculo.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">|||</div>
+                    <h3>Job Board Visual (Kanban)</h3>
+                    <p>Ve todos tus trabajos en un tablero: En espera, En produccion, Listo, Entregado. Tu equipo sabe exactamente que hacer.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">@</div>
+                    <h3>Ordenes de Trabajo Profesionales</h3>
+                    <p>Genera ordenes claras con todas las especificaciones. El taller no tiene que adivinar. Menos errores, menos reproceosos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">$+</div>
+                    <h3>Control de Abonos</h3>
+                    <p>Saldos pendientes siempre visibles. Nunca mas olvidas cobrar. Cada peso que te deben, controlado.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">@+</div>
+                    <h3>Directorio de Clientes</h3>
+                    <p>Historial completo de cada cliente: que ha pedido, cuanto ha gastado, que debe. Informacion al instante.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">#</div>
+                    <h3>Metricas del Negocio</h3>
+                    <p>Cuanto vendiste hoy, esta semana, este mes. Que productos son mas rentables. Datos para tomar decisiones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Numbers -->
+    <section class="benefits">
+        <div class="container">
+            <h2>Resultados que puedes esperar</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-number">24h</div>
+                    <div class="benefit-label">Implementacion completa</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">15h</div>
+                    <div class="benefit-label">Ahorro mensual en cotizaciones</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">0</div>
+                    <div class="benefit-label">Errores de cotizacion</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">100%</div>
+                    <div class="benefit-label">Visibilidad de produccion</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="precios">
+        <div class="container">
+            <h2>Precios simples, sin sorpresas</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Individual</h3>
+                    <div class="price">$50.000<span>/mes + IVA</span></div>
+                    <ul>
+                        <li>1 usuario</li>
+                        <li>Cotizador con costos reales</li>
+                        <li>Ordenes de trabajo ilimitadas</li>
+                        <li>Job Board visual</li>
+                        <li>Control de abonos</li>
+                        <li>Directorio de clientes</li>
+                        <li>Soporte por email</li>
+                    </ul>
+                    <a href="#demo" class="pricing-btn">Solicitar Demo</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>Business</h3>
+                    <div class="price">$90.000<span>/mes + IVA</span></div>
+                    <ul>
+                        <li>Hasta 5 usuarios</li>
+                        <li>Todo lo de Individual +</li>
+                        <li>Roles y permisos</li>
+                        <li>Reportes avanzados</li>
+                        <li>Dashboard gerencial</li>
+                        <li>Soporte prioritario WhatsApp</li>
+                        <li>Capacitacion equipo incluida</li>
+                    </ul>
+                    <a href="#demo" class="pricing-btn">Solicitar Demo</a>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 30px; color: #666;">
+                Sin contrato de permanencia. Cancela cuando quieras.<br>
+                <strong>Oferta de lanzamiento: 50% OFF el primer mes.</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Before/After -->
+    <section class="before-after">
+        <div class="container">
+            <h2>El cambio que vas a sentir</h2>
+            <div class="comparison">
+                <div class="before">
+                    <h3>ANTES (Excel y Post-its)</h3>
+                    <ul>
+                        <li>X Cotizas de memoria, te equivocas</li>
+                        <li>X Post-its que se caen y se pierden</li>
+                        <li>X El taller pregunta "que hago ahora?"</li>
+                        <li>X Se te olvida cobrar saldos</li>
+                        <li>X No sabes cuanto ganaste este mes</li>
+                        <li>X Estresado, ahogado, sin control</li>
+                    </ul>
+                </div>
+                <div class="after">
+                    <h3>DESPUES (Runflow Lite)</h3>
+                    <ul>
+                        <li>OK Costos calculados automaticamente</li>
+                        <li>OK Todo digitalizado, nada se pierde</li>
+                        <li>OK Tablero visual: todos saben que hacer</li>
+                        <li>OK Saldos pendientes siempre visibles</li>
+                        <li>OK Metricas en tiempo real</li>
+                        <li>OK Orden, control, tranquilidad</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <h2>Mira como funciona</h2>
+            <p>Tour de 5 minutos por Runflow Lite</p>
+            <div class="video-container">
+                <div class="video-placeholder">
+                    [Video Demo - YouTube Embed]<br>
+                    <a href="https://www.youtube.com/@smartgraphics_chile" style="color: #fbbf24;">Ver en YouTube</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">Cuanto tiempo toma la implementacion?</div>
+                    <div class="faq-answer">24 horas. Hoy configuramos, manana ya estas cotizando y generando ordenes de trabajo. No es un proyecto de meses.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Hay contrato de permanencia?</div>
+                    <div class="faq-answer">No. El servicio es mes a mes. Si no te gusta, cancelas sin penalidad. Asi de simple.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Es dificil de usar?</div>
+                    <div class="faq-answer">Si usas WhatsApp, puedes usar Runflow. Esta disenado para duenos de taller, no para ingenieros. Ademas, te acompanamos en la configuracion.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Que pasa si necesito mas de 5 usuarios?</div>
+                    <div class="faq-answer">Tenemos Runflow EVO para empresas mas grandes (15+ empleados). La migracion de datos es automatica cuando crezcas.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Mis datos estan seguros?</div>
+                    <div class="faq-answer">Si. Runflow corre en Amazon Web Services (AWS), la misma infraestructura que usan bancos y grandes empresas. Backups automaticos diarios.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Puedo probarlo antes de pagar?</div>
+                    <div class="faq-answer">Hacemos una demo personalizada de 30 minutos donde ves el sistema funcionando con ejemplos de tu negocio. Ademas, ofrecemos 50% OFF el primer mes.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final" id="demo">
+        <div class="container">
+            <h2>Listo para ordenarte?</h2>
+            <p>Agenda una demo de 30 minutos. Sin compromiso, sin presion.</p>
+            <a href="https://calendly.com/smartgraphics/demo-runflow" class="hero-cta">Agendar Demo Ahora</a>
+            <p style="margin-top: 30px; opacity: 0.8;">
+                O escribenos directamente:<br>
+                <strong>WhatsApp: +56 9 XXXX XXXX</strong><br>
+                <strong>Email: software@smartgraphics.cl</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Runflow Lite</h4>
+                    <a href="#beneficios">Beneficios</a>
+                    <a href="#precios">Precios</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#demo">Solicitar Demo</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Otros Productos</h4>
+                    <a href="/tintero">Agente Chat IA</a>
+                    <a href="/software/runflow-evo">Runflow EVO</a>
+                    <a href="/software/onprintshop">OnPrintShop</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <a href="https://www.smartgraphics.cl">Smart Graphics Solutions</a>
+                    <a href="https://www.youtube.com/@smartgraphics_chile">YouTube</a>
+                    <a href="https://www.linkedin.com/company/smartgraphics">LinkedIn</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <a href="mailto:software@smartgraphics.cl">software@smartgraphics.cl</a>
+                    <a href="tel:+56912345678">+56 9 XXXX XXXX</a>
+                    <a href="#">Santiago, Chile</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>2026 Smart Graphics Solutions. Todos los derechos reservados.</p>
+                <p>20+ anos en la industria grafica chilena.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
