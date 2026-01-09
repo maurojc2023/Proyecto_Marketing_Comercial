@@ -400,12 +400,12 @@ Cold calling masivo = NO ESCALA con equipo pequeño
 
 #### Objetivos YouTube 2026
 
-| Métrica | Ene | Mar | Jun | Sep | Dic |
-|---------|-----|-----|-----|-----|-----|
-| Suscriptores | +50 | +150 | +300 | +500 | +800 |
-| Vistas/mes | 500 | 1,500 | 4,000 | 8,000 | 15,000 |
+| Métrica         | Ene | Mar | Jun | Sep | Dic |
+|-----------------|-----|-----|-----|-----|-----|
+| Suscriptores    | +50 | +150 | +300 | +500 | +800 |
+| Vistas/mes      | 500 | 1,500 | 4,000 | 8,000 | 15,000 |
 | Tiempo visualización | 20h | 80h | 200h | 400h | 800h |
-| Leads/mes | 8 | 12 | 20 | 30 | 40 |
+| Leads/mes       | 8 | 12 | 20 | 30 | 40 |
 | Demos agendadas | 2 | 4 | 6 | 9 | 12 |
 | Clientes cerrados | 0-1 | 1 | 2 | 3 | 4 |
 
