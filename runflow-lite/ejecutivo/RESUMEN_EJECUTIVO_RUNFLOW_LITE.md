@@ -234,13 +234,13 @@ Runflow Lite y Agente Chat IA:
 
 **Q3 (Julio-Septiembre)**: Expansion
 - Penetrar mercados internacionales
-- Cross-sell activo con Chat IA
+- Cross-sell activo con Agente Chat IA
 - Meta Q3: 40 clientes acumulados
 
 **Q4 (Octubre-Diciembre)**: Consolidacion
 - Push final ano
 - Preparar 2027
-- Meta Q4: 56+ clientes acumulados
+- Meta Q4: 96+ clientes acumulados
 
 ---
 
