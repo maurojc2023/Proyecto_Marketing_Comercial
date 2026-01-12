@@ -193,7 +193,7 @@ Runflow Lite y Agente Chat IA:
 - **Mismo target**: Imprentas 2-8 empleados
 - **Mismo mercado**: Chile, Peru, Argentina
 - **Mismo equipo**: 4 personas
-- **Complementarios**: Se venden juntos frecuentemente
+- **Complementarios**: Se podrian venden juntos eventualmente
 
 **Estrategia de venta conjunta**:
 - Si el dolor es "no puedo atender 24/7" -> Agente Chat IA

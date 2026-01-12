@@ -160,7 +160,7 @@ SEMANA 1-2:
 ### Timeline de Contacto
 
 **Enero (Champions)**:
-- Semana 1: Llamadas personales a 8 Champions
+- Semana 1: Llamadas, correos a 8 Champions
 - Semana 2: 6 demos 1:1 personalizadas
 - Semana 3: 3-4 cierres
 - Semana 4: 4 clientes activos
